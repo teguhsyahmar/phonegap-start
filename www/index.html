@@ -22,21 +22,99 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure.min.css" />   
+		<link rel="stylesheet" type="text/css" href="css/vertesac-theme.min.css" />   
         <title>Hello World</title>
+		
+		<script type="text/javascript" src="cordova-2.2.0.js"></script>
+		<script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile.120-min.js"></script>
+		<script type="text/javascript">
+			$(document).bind("mobileinit", function(){
+			  //apply overrides here
+			});
+		</script>
+		
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready">
-                <p class="status pending blink">Connecting to Device</p>
-                <p class="status complete blink hide">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova-2.0.0.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+	<div data-role="page">
+        <div data-role="header" class="a">
+			<a href="#" data-inline="true" data-icon="home" data-iconpos="notext">Home</a>
+			<h1>Verte Android <i>Beta 1.0</i></h1>
+			<a href="#" data-inline="true" data-icon="forward">Quit</a>
+		</div>		
+		<div data-role="content">	
+			<div style="float:left;width:62%;margin-right:20px;padding:4px;">
+				<span style="font-size:48px">Vertesa<span style="color:#00d965">C</span></span>
+				<hr />
+				<div class="ui-body-a" style="padding:6px">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">Total Belanja</div>
+						<div class="ui-block-b"><input type="text" name="belanja" id="belanja" /></div>
+					</div>					
+				</div>
+				<br/>
+				<ul data-role="listview" data-theme="a">
+					<li data-icon="check"><a><img src="retrievable/thumb_dummy.jpg" />Discount Normal(50% potongan total belanja, berlaku 1x untuk setiap kunjungan)</a></li>
+					<li data-icon="check"><a><img src="retrievable/thumb_dummy.jpg" />Discount Normal(50% potongan total belanja, berlaku 1x untuk setiap kunjungan)</a></li>
+					<li data-icon="check"><a><img src="retrievable/thumb_dummy.jpg" />Discount Normal(50% potongan total belanja, berlaku 1x untuk setiap kunjungan)</a></li>
+				</ul>
+				<br />
+				<div class="ui-body-a" style="padding:6px">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">Jenis Pembayaran</div>
+						<div class="ui-block-b" style="text-align:right">
+							<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal" data-theme="a">
+									<input type="radio" name="radio-mini" id="radio-mini-1" value="choice-1" checked="checked" />
+									<label for="radio-mini-1">Credit</label>
+
+									<input type="radio" name="radio-mini" id="radio-mini-2" value="choice-2"  />
+									<label for="radio-mini-2">Debit</label>
+									
+									<input type="radio" name="radio-mini" id="radio-mini-3" value="choice-3" checked="checked" />
+									<label for="radio-mini-3">Cash</label>
+							</fieldset>
+						</div>
+					</div>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">Total Akhir</div>
+						<div class="ui-block-b"><input type="text" name="belanjaakhir" id="belanjaakhir" readonly="readonly" /></div>
+					</div>
+				</div>
+			</div>
+			<div style="float:left;width:35%;margin-left:2px;border:1px solid #006837;padding:4px;">
+				<div style="width:200px;height:200px;background:black"></div>
+				<table border="0" cellpadding="2px" cellspacing="4px" >
+					<tr>
+						<td><label for="id">ID:</label></td>
+						<td><input type="text" name="id" id="id" data-mini="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="name">Nama:</label></td>
+						<td><input type="text" name="name" id="name" data-mini="true" readonly="readonly" /></td>
+					</tr>					
+					<tr>
+						<td><label for="kunjungan">Kunjungan Ke:</label></td>
+						<td><input type="text" name="kunjungan" id="kunjungan" data-mini="true" readonly="readonly" /></td>
+					</tr>
+					<tr>
+						<td><label for="lastkunjungan">Kunjungan Terahir:</label></td>
+						<td><input type="text" name="lastkunjungan" id="lastkunjungan" data-mini="true" readonly="readonly" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button data-icon="search" data-theme="a">Scan Ulang</button></td>
+					</tr>
+				</table>				
+			</div>
+			<div style="float:left;width:35%;margin-left:4px">
+				<button data-theme="c">Proses Transaksi</button>
+			</div>
+			<div style="clear:both"></div>
+		</div>		
+		<div data-role="footer" class="b" style="text-align:right">
+			Copyright&copy;2012 Vertesac - Seoul, South Korea
+		</div>		
+	</div>
     </body>
 </html>
